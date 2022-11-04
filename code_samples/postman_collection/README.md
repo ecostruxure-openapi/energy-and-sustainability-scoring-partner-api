@@ -22,7 +22,7 @@ There are many benefits to using open-source Postman for API testing, including:
 # How to import postman collection 
 1. Select Import in the left navigation menu.
 2. Select the file. Postman will automatically recognize Postman data, confirming the name, format.
-![Import](./code_samples/Media/Import.PNG)
+![Import](../code_samples/Media/Import.PNG)
 3. Click on upload files and select the postman collection and environment variable file.
 4. Click on import button to complete import.
 
