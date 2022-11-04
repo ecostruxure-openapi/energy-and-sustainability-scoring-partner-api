@@ -22,7 +22,7 @@ There are many benefits to using open-source Postman for API testing, including:
 # How to import postman collection 
 1. Select Import in the left navigation menu.
 2. Select the file. Postman will automatically recognize Postman data, confirming the name, format.
-![Import](../code_samples/Media/Import.PNG)
+![Import](/code_samples/Media/Import.PNG)
 3. Click on upload files and select the postman collection and environment variable file.
 4. Click on import button to complete import.
 
@@ -47,11 +47,11 @@ There are many benefits to using open-source Postman for API testing, including:
 3. After entering all the values in the environment variables save it by clicking on 'Save' button
 4. Goto postman collection and select any Api that has to test
 5. Generate access token but click on 'Get New Access Token' in authorization tab 
-![GenerateAccessToken](./code_samples/Media/GenerateAccessToken.PNG)
+![GenerateAccessToken](/code_samples/Media/GenerateAccessToken.PNG)
 6. User will be navigated to CIAM login page as shown below, enter the user name and password and login.
-![CIAMLoginPage](./code_samples/Media/CIAMLoginPage.PNG)
+![CIAMLoginPage](/code_samples/Media/CIAMLoginPage.PNG)
 7. User will be landing to consent page that consists of terms and conditions and scope that requires authorization to access as shown below
-![consentpage](./code_samples/Media/consentpage.PNG)
+![consentpage](/code_samples/Media/consentpage.PNG)
 8. Check the terms and conditions and click on Authorize access button to approve the consent
 8. Click on authorization button to get access.
 9. Access token will be generated and sent back to postman
