@@ -1,0 +1,1365 @@
+{
+	"info": {
+		"_postman_id": "fd95c9df-4d1e-488e-9ed7-766442836a5a",
+		"name": "Energy and Sustainability Scoring",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetSite",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "read:site write:energy-score read:energy-performance read:energy-score",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "vdAqe2bP8FsfRdwh",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "cOmPL04Rna4UFfxvhrFuGBvV9GEOAzBj",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://se-exchange-uat-sandbox.apigee.net/openesx/poc/v1/oauth/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://se-exchange-uat-sandbox.apigee.net/openesx/poc/v1/oauth/authorize",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "spring-security",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "default",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "scope",
+							"value": "read:site",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "client_id",
+							"value": "GKJSecGymGErqUuXQj93ltMIIQoaGHVI",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "client_secret",
+							"value": "je2T8ryt0YgVRRdQ",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "expiry_date",
+							"value": "2022-07-31T09:41:18Z",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "user_attribute",
+							"value": "{\n\"at_hash\": \"5pIZLbrD_xfVenvd2i6Gig\",\n\"sub\": \"https://test.salesforce.com/id/00Dg0000006I0pDEAS/005g00000099qhBAAQ\",\n\"zoneinfo\": \"America/New_York\",\n\"email_verified\": false,\n\"address\": {\n\"country\": \"GB\"\n},\n\"profile\": \"https://se--SITbFO19.my.salesforce.com/005g00000099qhBAAQ\",\n\"iss\": \"https://sitbfo19-secommunities.cs17.force.com/identity\",\n\"preferred_username\": \"gb0060ad-0a8c-58a2-36b5-c0fa8692bff3@bridge-fo.com.sitbfo19\",\n\"given_name\": \"Sripathi\",\n\"locale\": \"en_GB\",\n\"picture\": \"https://sitbfo19-secommunities.cs17.force.com/img/userprofile/default_profile_200_v2.png\",\n\"custom_attributes\": {\n\"contactGoldenID\": null,\n\"zipCode\": null,\n\"businessUnit\": null,\n\"ailPrograms\": null,\n\"companyName\": null,\n\"jobTitle\": null,\n\"county\": null,\n\"marketSubSegment\": null,\n\"ailFeatures\": null,\n\"suffix\": null,\n\"ailApplications\": null,\n\"companyStreet\": null,\n\"division\": null,\n\"idmsFederatedId\": \"gb0060ad-0a8c-58a2-36b5-c0fa8692bff3\",\n\"companyPhone\": null,\n\"fax\": null,\n\"classLevel1\": null,\n\"companyCity\": null,\n\"trustStatus\": null,\n\"classLevel2\": null,\n\"pOBox\": null,\n\"contactId\": null,\n\"companyZipCode\": null,\n\"stateOrProvinceCode\": null,\n\"languageCode\": \"EN\",\n\"isInternal\": \"FALSE\",\n\"accountId\": null,\n\"firstName\": \"Sripathi\",\n\"mobilePhone\": null,\n\"employeeSize\": null,\n\"companyPOBox\": null,\n\"jobDescription\": null,\n\"salutation\": null,\n\"marketServed\": null,\n\"rejectionReason\": null,\n\"companyAdditionalAddress\": null,\n\"annualRevenue\": \"0\",\n\"companyCountryCode\": null,\n\"lastName\": \"Acharya\",\n\"accountGoldenID\": null,\n\"ail\": null,\n\"city\": null,\n\"emailOptIn\": \"N\",\n\"title\": null,\n\"companyFederationId\": null,\n\"aboutMe\": null,\n\"jobFunction\": null,\n\"identityType\": \"Email\",\n\"headquarter\": \"false\",\n\"countryCode\": \"GB\",\n\"street\": null,\n\"isMFAEnabled\": \"false\",\n\"currency\": \"GBP\",\n\"rejectionComment\": null,\n\"department\": null,\n\"userContext\": \"Home\",\n\"email\": \"sg_sripathi@thbs.com\",\n\"marketSegment\": null,\n\"hashedPin\": null,\n\"trustLevel\": \"IsPrivate\",\n\"userId\": \"005g00000099qhBAAQ\",\n\"taxIdentificationNumber\": null,\n\"federatedId\": \"gb0060ad-0a8c-58a2-36b5-c0fa8692bff3\",\n\"companyStateOrProvinceCode\": null,\n\"workPhone\": null,\n\"middleName\": null,\n\"additionalAddress\": null,\n\"companyCounty\": null,\n\"companyWebsite\": null\n},\n\"aud\": \"3MVG9ahGHqp.k2_xWoKZZKzfq3sho2y3eCEcf31IhyDtw21_fqumvWuPHsBl0S93BtduWi_u3um6sUTeBy5xz\",\n\"updated_at\": \"2022-03-14T12:27:18Z\",\n\"nickname\": \"gb0060ad-0a8c-58a2-36b5-c0fa861694509747\",\n\"name\": \"Sripathi Acharya\",\n\"phone_number\": null,\n\"exp\": 1647261269,\n\"iat\": 1647261149,\n\"family_name\": \"Acharya\",\n\"email\": \"sg_sripathi@thbs.com\"\n}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "token_name",
+							"value": "access5",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base-path}}/ecostruxure/v1/sites",
+					"host": [
+						"{{base-path}}"
+					],
+					"path": [
+						"ecostruxure",
+						"v1",
+						"sites"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer vg9VBRXJHzuEG6IUJUh1FSENjrep",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "scope",
+									"value": "read:site",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "client_id",
+									"value": "GKJSecGymGErqUuXQj93ltMIIQoaGHVI",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "client_secret",
+									"value": "je2T8ryt0YgVRRdQ",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "expiry_date",
+									"value": "2022-07-31T09:41:18Z",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "user_attribute",
+									"value": "{\n\"at_hash\": \"5pIZLbrD_xfVenvd2i6Gig\",\n\"sub\": \"https://test.salesforce.com/id/00Dg0000006I0pDEAS/005g00000099qhBAAQ\",\n\"zoneinfo\": \"America/New_York\",\n\"email_verified\": false,\n\"address\": {\n\"country\": \"GB\"\n},\n\"profile\": \"https://se--SITbFO19.my.salesforce.com/005g00000099qhBAAQ\",\n\"iss\": \"https://sitbfo19-secommunities.cs17.force.com/identity\",\n\"preferred_username\": \"gb0060ad-0a8c-58a2-36b5-c0fa8692bff3@bridge-fo.com.sitbfo19\",\n\"given_name\": \"Sripathi\",\n\"locale\": \"en_GB\",\n\"picture\": \"https://sitbfo19-secommunities.cs17.force.com/img/userprofile/default_profile_200_v2.png\",\n\"custom_attributes\": {\n\"contactGoldenID\": null,\n\"zipCode\": null,\n\"businessUnit\": null,\n\"ailPrograms\": null,\n\"companyName\": null,\n\"jobTitle\": null,\n\"county\": null,\n\"marketSubSegment\": null,\n\"ailFeatures\": null,\n\"suffix\": null,\n\"ailApplications\": null,\n\"companyStreet\": null,\n\"division\": null,\n\"idmsFederatedId\": \"gb0060ad-0a8c-58a2-36b5-c0fa8692bff3\",\n\"companyPhone\": null,\n\"fax\": null,\n\"classLevel1\": null,\n\"companyCity\": null,\n\"trustStatus\": null,\n\"classLevel2\": null,\n\"pOBox\": null,\n\"contactId\": null,\n\"companyZipCode\": null,\n\"stateOrProvinceCode\": null,\n\"languageCode\": \"EN\",\n\"isInternal\": \"FALSE\",\n\"accountId\": null,\n\"firstName\": \"Sripathi\",\n\"mobilePhone\": null,\n\"employeeSize\": null,\n\"companyPOBox\": null,\n\"jobDescription\": null,\n\"salutation\": null,\n\"marketServed\": null,\n\"rejectionReason\": null,\n\"companyAdditionalAddress\": null,\n\"annualRevenue\": \"0\",\n\"companyCountryCode\": null,\n\"lastName\": \"Acharya\",\n\"accountGoldenID\": null,\n\"ail\": null,\n\"city\": null,\n\"emailOptIn\": \"N\",\n\"title\": null,\n\"companyFederationId\": null,\n\"aboutMe\": null,\n\"jobFunction\": null,\n\"identityType\": \"Email\",\n\"headquarter\": \"false\",\n\"countryCode\": \"GB\",\n\"street\": null,\n\"isMFAEnabled\": \"false\",\n\"currency\": \"GBP\",\n\"rejectionComment\": null,\n\"department\": null,\n\"userContext\": \"Home\",\n\"email\": \"sg_sripathi@thbs.com\",\n\"marketSegment\": null,\n\"hashedPin\": null,\n\"trustLevel\": \"IsPrivate\",\n\"userId\": \"005g00000099qhBAAQ\",\n\"taxIdentificationNumber\": null,\n\"federatedId\": \"gb0060ad-0a8c-58a2-36b5-c0fa8692bff3\",\n\"companyStateOrProvinceCode\": null,\n\"workPhone\": null,\n\"middleName\": null,\n\"additionalAddress\": null,\n\"companyCounty\": null,\n\"companyWebsite\": null\n},\n\"aud\": \"3MVG9ahGHqp.k2_xWoKZZKzfq3sho2y3eCEcf31IhyDtw21_fqumvWuPHsBl0S93BtduWi_u3um6sUTeBy5xz\",\n\"updated_at\": \"2022-03-14T12:27:18Z\",\n\"nickname\": \"gb0060ad-0a8c-58a2-36b5-c0fa861694509747\",\n\"name\": \"Sripathi Acharya\",\n\"phone_number\": null,\n\"exp\": 1647261269,\n\"iat\": 1647261149,\n\"family_name\": \"Acharya\",\n\"email\": \"sg_sripathi@thbs.com\"\n}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "token_name",
+									"value": "access5",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base-path}}/ecostruxure/v1/sites",
+							"host": [
+								"{{base-path}}"
+							],
+							"path": [
+								"ecostruxure",
+								"v1",
+								"sites"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 29 Sep 2022 06:19:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src https: 'unsafe-inline' 'unsafe-eval' data: blob: mediastream:; font-src *;"
+						},
+						{
+							"key": "Permissions-Policy",
+							"value": "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"c207fb75-a207-4014-b85d-0e3b7c01ad14\",\n        \"name\": \"Mcdonald's Milton\",\n        \"type\": \"retail\",\n        \"metadata\": {\n            \"grossArea\": 425,\n            \"buildingOccupants\": 49,\n            \"daysPerWeekWithVisitors\": 7,\n            \"numberOfVisitorsPerDay\": 548,\n            \"visitDuration\": 0.020833333,\n            \"weeklyOperatingHours\": 168\n        },\n        \"postalAddress\": {\n            \"address\": \"cnr Milton Rd &\",\n            \"city\": \"Milton\",\n            \"countryIsoCode\": \"AU\",\n            \"stateProvince\": \"New South Wales\"\n        }\n    },\n    {\n        \"id\": \"33f1096f-5293-49c0-8370-1844ecb511ee\",\n        \"name\": \"McDonald's Padstow\",\n        \"type\": \"retail\",\n        \"metadata\": {\n            \"grossArea\": 425,\n            \"buildingOccupants\": 49,\n            \"daysPerWeekWithVisitors\": 7,\n            \"numberOfVisitorsPerDay\": 548,\n            \"visitDuration\": 0.020833333,\n            \"weeklyOperatingHours\": 168\n        },\n        \"postalAddress\": {\n            \"address\": \"27 Arab Road\",\n            \"city\": \"Padstow\",\n            \"countryIsoCode\": \"AU\",\n            \"zipCode\": \"2211\",\n            \"stateProvince\": \"New South Wales\"\n        }\n    },\n    {\n        \"id\": \"fc64ac6a-abfd-4f5e-9d38-81101152c0ca\",\n        \"name\": \"Mcdonald's Melton South\",\n        \"type\": \"retail\",\n        \"metadata\": {\n            \"grossArea\": 425,\n            \"buildingOccupants\": 49,\n            \"daysPerWeekWithVisitors\": 7,\n            \"numberOfVisitorsPerDay\": 548,\n            \"visitDuration\": 0.020833333,\n            \"weeklyOperatingHours\": 168\n        },\n        \"postalAddress\": {\n            \"address\": \"173 exford road\",\n            \"city\": \"Melton South\",\n            \"countryIsoCode\": \"AU\",\n            \"zipCode\": \"3338\",\n            \"stateProvince\": \"Victoria\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GetMeters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "read:site write:energy-score read:energy-performance read:energy-score",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "vdAqe2bP8FsfRdwh",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "cOmPL04Rna4UFfxvhrFuGBvV9GEOAzBj",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://se-exchange-uat-sandbox.apigee.net/openesx/poc/v1/oauth/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://se-exchange-uat-sandbox.apigee.net/openesx/poc/v1/oauth/authorize",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "spring-security",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{base-path}}/ecostruxure/v1/sites/:siteId/meters",
+					"host": [
+						"{{base-path}}"
+					],
+					"path": [
+						"ecostruxure",
+						"v1",
+						"sites",
+						":siteId",
+						"meters"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "siteId",
+							"value": "fc64ac6a-abfd-4f5e-9d38-81101152c0ca"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer vg9VBRXJHzuEG6IUJUh1FSENjrep",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base-path}}/ecostruxure/v1/sites/:siteId/meters",
+							"host": [
+								"{{base-path}}"
+							],
+							"path": [
+								"ecostruxure",
+								"v1",
+								"sites",
+								":siteId",
+								"meters"
+							],
+							"variable": [
+								{
+									"key": "siteId",
+									"value": "fc64ac6a-abfd-4f5e-9d38-81101152c0ca"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 29 Sep 2022 06:25:50 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src https: 'unsafe-inline' 'unsafe-eval' data: blob: mediastream:; font-src *;"
+						},
+						{
+							"key": "Permissions-Policy",
+							"value": "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"8bebc978-750d-4b55-bc31-f014bf1fff8c\",\n        \"name\": \"main_meter\",\n        \"gatewayId\": \"751\",\n        \"commodity\": \"Electricity\",\n        \"usage\": \"MainMeter\",\n        \"measurements\": [\n            {\n                \"id\": \"61773\",\n                \"name\": \"IA\",\n                \"timeseries\": {\n                    \"key\": \"43b68619-7681-4458-bbd6-c4e38a0b202a\"\n                }\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GetEnergyCertificationScoring",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "read:site write:energy-score read:energy-performance read:energy-score",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "vdAqe2bP8FsfRdwh",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "cOmPL04Rna4UFfxvhrFuGBvV9GEOAzBj",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://se-exchange-uat-sandbox.apigee.net/openesx/poc/v1/oauth/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://se-exchange-uat-sandbox.apigee.net/openesx/poc/v1/oauth/authorize",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "spring-security",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{base-path}}/ecostruxure/v1/sites/:siteId/certification-scores?type=average&category=energy",
+					"host": [
+						"{{base-path}}"
+					],
+					"path": [
+						"ecostruxure",
+						"v1",
+						"sites",
+						":siteId",
+						"certification-scores"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "average"
+						},
+						{
+							"key": "category",
+							"value": "energy"
+						}
+					],
+					"variable": [
+						{
+							"key": "siteId",
+							"value": "fc64ac6a-abfd-4f5e-9d38-81101152c0ca"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer yAvq83OmjIGB7jhA8MdVUCk1TwDL"
+							}
+						],
+						"url": {
+							"raw": "{{base-path}}/ecostruxure/v1/sites/:siteId/certification-scores?type=average&category=energy",
+							"host": [
+								"{{base-path}}"
+							],
+							"path": [
+								"ecostruxure",
+								"v1",
+								"sites",
+								":siteId",
+								"certification-scores"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "average"
+								},
+								{
+									"key": "category",
+									"value": "energy"
+								}
+							],
+							"variable": [
+								{
+									"key": "siteId",
+									"value": "fc64ac6a-abfd-4f5e-9d38-81101152c0ca"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 29 Sep 2022 06:25:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src https: 'unsafe-inline' 'unsafe-eval' data: blob: mediastream:; font-src *;"
+						},
+						{
+							"key": "Permissions-Policy",
+							"value": "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"date\": \"2022-07-11\",\n        \"score\": 94.99,\n        \"type\": \"average\",\n        \"category\": \"energy\",\n        \"updatedAt\": \"2022-07-11T12:18:01Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GetTimeseries",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "read:site write:energy-score read:energy-performance read:energy-score",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "vdAqe2bP8FsfRdwh",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "cOmPL04Rna4UFfxvhrFuGBvV9GEOAzBj",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://se-exchange-uat-sandbox.apigee.net/openesx/poc/v1/oauth/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://se-exchange-uat-sandbox.apigee.net/openesx/poc/v1/oauth/authorize",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "spring-security",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{base-path}}/ecostruxure/v1/sites/:siteId/timeseries?updatedAt[gte]=2022-01-01T12:08:56.235-07:00&updatedAt%5Blt%5D=2022-06-06T12:08:56.235-07:00",
+					"host": [
+						"{{base-path}}"
+					],
+					"path": [
+						"ecostruxure",
+						"v1",
+						"sites",
+						":siteId",
+						"timeseries"
+					],
+					"query": [
+						{
+							"key": "updatedAt[gte]",
+							"value": "2022-01-01T12:08:56.235-07:00"
+						},
+						{
+							"key": "updatedAt%5Blt%5D",
+							"value": "2022-06-06T12:08:56.235-07:00"
+						}
+					],
+					"variable": [
+						{
+							"key": "siteId",
+							"value": "fc64ac6a-abfd-4f5e-9d38-81101152c0ca"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer vg9VBRXJHzuEG6IUJUh1FSENjrep",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base-path}}/ecostruxure/v1/sites/:siteId/timeseries?updatedAt[gte]=2022-01-01T12:08:56.235-07:00&updatedAt%5Blt%5D=2022-06-06T12:08:56.235-07:00",
+							"host": [
+								"{{base-path}}"
+							],
+							"path": [
+								"ecostruxure",
+								"v1",
+								"sites",
+								":siteId",
+								"timeseries"
+							],
+							"query": [
+								{
+									"key": "updatedAt[gte]",
+									"value": "2022-01-01T12:08:56.235-07:00"
+								},
+								{
+									"key": "updatedAt%5Blt%5D",
+									"value": "2022-06-06T12:08:56.235-07:00"
+								}
+							],
+							"variable": [
+								{
+									"key": "siteId",
+									"value": "fc64ac6a-abfd-4f5e-9d38-81101152c0ca"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 29 Sep 2022 06:25:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src https: 'unsafe-inline' 'unsafe-eval' data: blob: mediastream:; font-src *;"
+						},
+						{
+							"key": "Permissions-Policy",
+							"value": "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"key\": \"43b68619-7681-4458-bbd6-c4e38a0b202a\",\n        \"values\": [\n            {\n                \"date\": \"2022-01-02T00:00:00Z\",\n                \"updatedAt\": \"2022-02-01T14:49:46Z\",\n                \"value\": 567\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "CreateEnergyCertifiactionScoring",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "read:site write:energy-score read:energy-performance read:energy-score",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "vdAqe2bP8FsfRdwh",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "cOmPL04Rna4UFfxvhrFuGBvV9GEOAzBj",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://se-exchange-uat-sandbox.apigee.net/openesx/poc/v1/oauth/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://se-exchange-uat-sandbox.apigee.net/openesx/poc/v1/oauth/authorize",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "spring-security",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"date\": \"2022-06-26\",\r\n        \"score\": \"87\",\r\n        \"type\": \"daily\",\r\n        \"category\": \"energy\"\r\n    },\r\n    {\r\n        \"date\": \"2022-06-26\",\r\n        \"score\": 90,\r\n        \"type\": \"monthly\",\r\n        \"category\": \"energy\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-path}}/ecostruxure/v1/sites/:site-id/certification-scores",
+					"host": [
+						"{{base-path}}"
+					],
+					"path": [
+						"ecostruxure",
+						"v1",
+						"sites",
+						":site-id",
+						"certification-scores"
+					],
+					"variable": [
+						{
+							"key": "site-id",
+							"value": "fc64ac6a-abfd-4f5e-9d38-81101152c0ca"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201 Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"date\": \"2022-06-26\",\r\n        \"score\": 87,\r\n        \"type\": \"daily\",\r\n        \"category\": \"energy\"\r\n    },\r\n    {\r\n        \"date\": \"2022-06-26\",\r\n        \"score\": 90,\r\n        \"type\": \"monthly\",\r\n        \"category\": \"energy\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-path}}/ecostruxure/v1/sites/:site-id/certification-scores",
+							"host": [
+								"{{base-path}}"
+							],
+							"path": [
+								"ecostruxure",
+								"v1",
+								"sites",
+								":site-id",
+								"certification-scores"
+							],
+							"variable": [
+								{
+									"key": "site-id",
+									"value": "fc64ac6a-abfd-4f5e-9d38-81101152c0ca"
+								}
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 29 Sep 2022 06:28:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src https: 'unsafe-inline' 'unsafe-eval' data: blob: mediastream:; font-src *;"
+						},
+						{
+							"key": "Permissions-Policy",
+							"value": "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"date\": \"2022-06-26\",\n        \"score\": 87,\n        \"type\": \"daily\",\n        \"category\": \"energy\",\n        \"updatedAt\": \"2022-09-29T06:28:09.38430211Z\"\n    },\n    {\n        \"date\": \"2022-06-26\",\n        \"score\": 90,\n        \"type\": \"monthly\",\n        \"category\": \"energy\",\n        \"updatedAt\": \"2022-09-29T06:28:09.385182117Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "CreateEnergyCertificationProviders",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "read:site write:energy-score read:energy-performance read:energy-score",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "vdAqe2bP8FsfRdwh",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "cOmPL04Rna4UFfxvhrFuGBvV9GEOAzBj",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://se-exchange-uat-sandbox.apigee.net/openesx/poc/v1/oauth/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://se-exchange-uat-sandbox.apigee.net/openesx/poc/v1/oauth/authorize",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "spring-security",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"leedName\": \"Mcdonald's Melton South\",\r\n    \"leedId\": 2147483647673456567\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-path}}/ecostruxure/v1/sites/:siteId/certification-providers",
+					"host": [
+						"{{base-path}}"
+					],
+					"path": [
+						"ecostruxure",
+						"v1",
+						"sites",
+						":siteId",
+						"certification-providers"
+					],
+					"variable": [
+						{
+							"key": "siteId",
+							"value": "fc64ac6a-abfd-4f5e-9d38-81101152c0ca"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201 Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"leedName\": \"Mcdonald's Melton South\",\r\n    \"leedId\": 2147483647673456567\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-path}}/ecostruxure/v1/sites/:siteId/certification-providers",
+							"host": [
+								"{{base-path}}"
+							],
+							"path": [
+								"ecostruxure",
+								"v1",
+								"sites",
+								":siteId",
+								"certification-providers"
+							],
+							"variable": [
+								{
+									"key": "siteId",
+									"value": "fc64ac6a-abfd-4f5e-9d38-81101152c0ca"
+								}
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 29 Sep 2022 06:28:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src https: 'unsafe-inline' 'unsafe-eval' data: blob: mediastream:; font-src *;"
+						},
+						{
+							"key": "Permissions-Policy",
+							"value": "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"leedId\": 2147483647673456567,\n    \"leedName\": \"Mcdonald's Melton South\"\n}"
+				}
+			]
+		}
+	]
+}
