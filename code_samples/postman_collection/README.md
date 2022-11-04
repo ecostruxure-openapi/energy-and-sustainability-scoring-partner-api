@@ -14,14 +14,15 @@ There are many benefits to using open-source Postman for API testing, including:
 
 ## Requirements
 
-Minimum requirements to use postman tool in windows and MacOS
+1. Minimum requirements to use postman tool in windows and MacOS
+2. Search this link https://www.postman.com/downloads/ in any browser and download the software
 
 ## How to use given Energy and Sustainability Scoring APIs
 
 # How to import postman collection 
 1. Select Import in the left navigation menu.
 2. Select the file. Postman will automatically recognize Postman data, confirming the name, format.
-![img1](./media/img1.PNG)
+![Import](./media/Import.PNG)
 3. Click on upload files and select the postman collection and environment variable file.
 4. Click on import button to complete import.
 
@@ -30,25 +31,35 @@ Minimum requirements to use postman tool in windows and MacOS
 1. Click on Environment quick look button and select the envirnoment file that is import.
 2. Configure the envirnoment variables
 
-{{api-server-host}}- Enter the APIGEE endpoint
-{{callback-url}} - Enter the URL that invoked after OAuth authorization for the consumer (The client application callback URL to redirect to after auth. This must be registered with the API provider. If not provided, Postman will use a default empty URL and try to extract the code or access token from it)
-{{authorize-url}}- Enter the AUthorization URL that  the endpoint for the API provider authorization server, to retrieve the auth code
-{{token-url}} -Enter token URL that provider's authentication server, to exchange an authorization code for an access token.
-{{clientid}} - Enter authorized client Id
-{{clientsecret}} - Enter authorized client secret
-{{scope}} - Enter an opaque value to prevent cross-site request forgery. 
-{{state}} - Enter the scope of access you are requesting, which may include multiple space-separated values
+| VARIABLES  | VALUES  |
+|---|---|
+| {{api-server-host}}  | Enter the APIGEE endpoint  |
+| {{callback-url}}  |Enter the URL that invoked after OAuth authorization for the consumer (The client application callback URL to redirect to after auth. This must be registered with the API provider. If not provided, Postman will use a default empty URL and try to extract the code or access token from it)   |
+| {{authorize-url}}  | Enter the AUthorization URL that  the endpoint for the API provider authorization server, to retrieve the auth code  |
+|  {{token-url}} | Enter token URL that provider's authentication server, to exchange an authorization code for an access token.  |
+| {{clientid}}  |  Enter authorized client Id |
+| {{clientsecret}}  | Enter authorized client secret  |
+|  {{scope}} | Enter the scope of access you are requesting (refer the swagger), which may include multiple space-separated values   |
+| {{state}}  |   Enter an opaque value to prevent cross-site request forgery  |
+ 
 
 
 3. After entering all the values in the environment variables save it by clicking on 'Save' button
 4. Goto postman collection and select any Api that has to test
 5. Generate access token but click on 'Get New Access Token' in authorization tab 
-6. User will be navigated to CIAM login page 
+![GenerateAccessToken](./Media/GenerateAccessToken.PNG)
+6. User will be navigated to CIAM login page as shown below, enter the user name and password and login.
+![CIAMLoginPage](./Media/CIAMLoginPage.PNG)
+7. User will be landing to consent page that consists of terms and conditions and scope that requires authorization to access as shown below
+![consentpage](./Media/consentpage.PNG)
+8. Check the terms and conditions and click on Authorize access button to approve the consent
+8. Click on authorization button to get access.
+9. Access token will be generated and sent back to postman
+10. Use the token to trigger the API
+11. Click on send button to trigger API and get response.
 
 
-
-
-
+## Below we have sample request and response of energy and sustainability scoring apis for the reference 
 
 # REST API
 
@@ -59,15 +70,15 @@ The REST API to the example app is described below.
 ### Request
 
 `GET /sites`
-
+```curl
     curl --location --request GET '--HostName--/ecostruxure/v1/sites' \
 --header 'Authorization: Bearer Token'
-
+```
 ### Response
 
     HTTP Status: 200 OK
     Content-Type: application/json
-   
+```json   
     [
     {
         "id": "c207fb75-a207-4014-b85d-0e3b7c01ad14",
@@ -109,7 +120,7 @@ The REST API to the example app is described below.
         }
     }
 ]
-
+```
 
 
 ## Get list of meters
@@ -275,4 +286,4 @@ The REST API to the example app is described below.
 
 ## Limitations
 
-Any limitations to use the APIs in production and sandbox 
+1. User should be existing customer of SE
