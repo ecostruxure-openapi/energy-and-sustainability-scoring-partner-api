@@ -2,7 +2,7 @@
 
 ## About the tool
 
-Postman is an API client that makes it easy for developers to create, share, test and document APIs. With this open-source solution, users can create and save simple and complex HTTP/s requests, as well as read their responses
+Postman is an API client that makes it easy for developers and testers to create, share, test and document APIs. With this open-source solution, users can create and save simple and complex HTTP/s requests, as well as read their responses
 
 There are many benefits to using open-source Postman for API testing, including: 
 1. Accessibility from the cloud: When you are signed into your account, you are able to access your files. You can execute Postman API tests anytime, anywhere.
@@ -16,9 +16,7 @@ There are many benefits to using open-source Postman for API testing, including:
 
 Minimum requirements to use postman tool in windows and MacOS
 
-## How to use
-
-# Energy and Sustainability Scoring APIs
+## How to use given Energy and Sustainability Scoring APIs
 
 # How to import postman collection 
 1. Select Import in the left navigation menu.
@@ -30,15 +28,24 @@ Minimum requirements to use postman tool in windows and MacOS
 # Steps to configure the variables in environment
 
 1. Click on Environment quick look button and select the envirnoment file that is import.
+2. Configure the envirnoment variables
 
 {{api-server-host}}- Enter the APIGEE endpoint
-{{callback-url}} - Enter the URL that invoked after OAuth authorization for the consumer
-{{authorize-url}}- Enter the AUthorization URL
-{{token-url}}
-{{clientid}}
-{{clientsecret}}
-{{scope}}
-{{state}}
+{{callback-url}} - Enter the URL that invoked after OAuth authorization for the consumer (The client application callback URL to redirect to after auth. This must be registered with the API provider. If not provided, Postman will use a default empty URL and try to extract the code or access token from it)
+{{authorize-url}}- Enter the AUthorization URL that  the endpoint for the API provider authorization server, to retrieve the auth code
+{{token-url}} -Enter token URL that provider's authentication server, to exchange an authorization code for an access token.
+{{clientid}} - Enter authorized client Id
+{{clientsecret}} - Enter authorized client secret
+{{scope}} - Enter an opaque value to prevent cross-site request forgery. 
+{{state}} - Enter the scope of access you are requesting, which may include multiple space-separated values
+
+
+3. After entering all the values in the environment variables save it by clicking on 'Save' button
+4. Goto postman collection and select any Api that has to test
+5. Generate access token but click on 'Get New Access Token' in authorization tab 
+6. User will be navigated to CIAM login page 
+
+
 
 
 
