@@ -128,15 +128,16 @@ The REST API to the example app is described below.
 ### Request
 
 `GET /sites/{site-id}/meters`
-
+``` curl
     curl --location --request GET '{{api-server-host}}//ecostruxure/v1/sites/fc64ac6a-abfd-4f5e-9d38-81101152c0ca/meters' \
---header 'Authorization: Bearer Token'
+--header 'Authorization: Bearer Token' 
+```
 
 ### Response
 
     HTTP Status: 200 OK
     Content-Type: application/json
-   
+   ``` json
     [
     {
         "id": "8bebc978-750d-4b55-bc31-f014bf1fff8c",
@@ -156,22 +157,23 @@ The REST API to the example app is described below.
     }
 ]
 
-
+```
 
 ## Get list of Timeseries
 
 ### Request
 
 `GET /sites/{site-id}/timeseries`
-
+``` curl
     curl --location --request GET '{{api-server-host}}//ecostruxure/v1/sites/fc64ac6a-abfd-4f5e-9d38-81101152c0ca/timeseries?updatedAt[gte]=2022-01-01T12:08:56.235-07:00&updatedAt%5Blt%5D=2022-06-06T12:08:56.235-07:00' \
 --header 'Authorization: Bearer Token'
+```
 
 ### Response
 
     HTTP Status: 200 OK
     Content-Type: application/json
-   
+   ```json
    [
     {
         "key": "43b68619-7681-4458-bbd6-c4e38a0b202a",
@@ -184,46 +186,47 @@ The REST API to the example app is described below.
         ]
     }
 ]
-
+```
 
 ## Create Energy Certification Providers
 
 ### Request
 
 `POST /sites/{site-id}/certification-providers`
-
+``` curl
     curl --location --request POST '{{api-server-host}}/ecostruxure/v1/sites/fc64ac6a-abfd-4f5e-9d38-81101152c0ca/certification-providers' \
 --header 'Authorization: Bearer Token' \
 --data-raw '{
     "leedName": "Mcdonald'\''s Melton South",
     "leedId": 2147483647
     }'
-
+```
 ### Response
 
     HTTP Status: 201 Created
     Content-Type: application/json
    
-
+```json
     {
     "leedId": 2147483647,
     "leedName": "Mcdonald's Melton South"
     }
+```
 
 ## Get list of Timeseries
 
 ### Request
 
 `GET /sites/{site-id}/timeseries`
-
+``` curl
     curl --location --request GET '{{api-server-host}}//ecostruxure/v1/sites/fc64ac6a-abfd-4f5e-9d38-81101152c0ca/timeseries?updatedAt[gte]=2022-01-01T12:08:56.235-07:00&updatedAt%5Blt%5D=2022-06-06T12:08:56.235-07:00' \
 --header 'Authorization: Bearer Token'
-
+```
 ### Response
 
     HTTP Status: 200 OK
     Content-Type: application/json
-   
+   ```json
    [
     {
         "key": "43b68619-7681-4458-bbd6-c4e38a0b202a",
@@ -236,7 +239,7 @@ The REST API to the example app is described below.
         ]
     }
     ]
-
+```
 
 
 ## Create Energy Certification Scoring
@@ -244,7 +247,7 @@ The REST API to the example app is described below.
 ### Request
 
 `POST /sites/{site-id}/certification-scores`
-
+```curl
     curl --location --request POST '{{api-server-host}}/ecostruxure/v1/sites/fc64ac6a-abfd-4f5e-9d38-81101152c0ca/certification-scores' \
 --header 'Authorization: Bearer Token' \
 --data-raw '[
@@ -261,12 +264,12 @@ The REST API to the example app is described below.
         "category": "energy"
     }
     ]'
-
+```
 ### Response
 
     HTTP Status: 201 Created
     Content-Type: application/json
-   
+   ```json
    [
     {
         "date": "2022-06-26",
@@ -283,7 +286,7 @@ The REST API to the example app is described below.
         "updatedAt": "2022-09-29T06:28:09.385182117Z"
     }
     ]
-
+```
 ## Limitations
 
 1. User should be existing customer of SE
