@@ -15,7 +15,8 @@ There are many benefits to using open-source Postman for API testing, including:
 ## Requirements
 
 1. Minimum requirements to use postman tool in windows and MacOS
-2. Search this link https://www.postman.com/downloads/ in any browser and download the software
+2. Search this link [postman tool](https://www.postman.com/downloads/) in any browser and download the software  
+[How to import postman collection](#How-to-import-postman-collection)
 
 ## How to use given Energy and Sustainability Scoring APIs
 
