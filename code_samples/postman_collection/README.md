@@ -171,7 +171,7 @@ Postman is an API client that makes it easy for developers and testers to create
 `GET /sites/{site-id}/timeseries`
 ``` curl
     curl --location --request GET '{{api-server-host}}//ecostruxure/v1/sites/fc64ac6a-abfd-4f5e-9d38-81101152c0ca/timeseries?updatedAt[gte]=2022-01-01T12:08:56.235-07:00&updatedAt%5Blt%5D=2022-06-06T12:08:56.235-07:00' \
---header 'Authorization: Bearer Token'
+--header 'Authorization: Bearer Token' 
 ```
 
 ### Response
