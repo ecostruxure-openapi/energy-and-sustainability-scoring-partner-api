@@ -35,16 +35,16 @@ Postman is an API client that makes it easy for developers and testers to create
 
 3. Configure the variables given below in environment section
 
-| VARIABLES  | VALUES  |
-|---|---|
-| {{api-server-host}}  | Enter the apiserver endpoint that is mentioned in the api specification file  |
-| {{callback-url}}  |Enter the URL that invoked after OAuth authorization for the consumer (The client application callback URL to redirect to after auth.  If not provided, Postman will use a default empty URL and try to extract the code or access token from it)   |
-| {{authorize-url}}  | Enter the AUthorization URL that  the endpoint for the API provider authorization server, to retrieve the auth code  |
-|  {{token-url}} | Enter token URL that provider's authentication server, to exchange an authorization code for an access token.  |
-| {{client-id}}  |  Enter authorized client Id |
-| {{client-secret}}  | Enter authorized client secret  |
-|  {{scope}} | Enter the scope of access you are requesting (refer the swagger), which may include multiple space-separated values   |
-| {{state}}  |   Enter an opaque value to prevent cross-site request forgery  |
+| NUM | VARIABLES  | VALUES  |
+|---|---|---|
+| 1 | {{api-server-host}}  | Enter the apiserver endpoint that is mentioned in the api specification file  |
+| 2 | {{callback-url}}  |Enter the URL that invoked after OAuth authorization for the consumer (The client application callback URL to redirect to after auth.  If not provided, Postman will use a default empty URL and try to extract the code or access token from it)   |
+| 3 | {{authorize-url}}  | Enter the Authorization URL that  the endpoint for the API provider authorization server, to retrieve the auth code (mentioned in the api specification file) |
+| 4 |  {{token-url}} | Enter token URL that provider's authentication server, to exchange an authorization code for an access token (mentioned in the api specification file) |
+| 5 | {{client-id}}  |  Enter consumer key once they subscribe to the product |
+| 6 | {{client-secret}}  | Enter consumer key once they subscribe to the product  |
+| 7 |  {{scope}} | Enter the scope of access you are requesting (mentioned in the api specification file), which may include multiple space-separated values   |
+| 8 | {{state}}  |   Enter an opaque value to prevent cross-site request forgery  |
  
 
 
