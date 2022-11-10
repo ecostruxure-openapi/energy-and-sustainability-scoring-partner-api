@@ -4,18 +4,12 @@
 
 Postman is an API client that makes it easy for developers and testers to create, share, test and document APIs. With this open-source solution, users can create and save simple and complex HTTP/s requests, as well as read their responses
 
-There are many benefits to using open-source Postman for API testing, including: 
-1. Accessibility from the cloud: When you are signed into your account, you are able to access your files. You can execute Postman API tests anytime, anywhere.
-2. Collaboration: Postman's import and export capabilities make it easier to share files with other team members, enabling closer collaboration. 
-3. Test Creation: You can add test checkpoints such as verifying successful HTTP response statuses to your Postman API calls. This capability can help teams achieve more comprehensive test coverage.  
-4. Automated API Testing: With features such as Collection Runner, you can automate Postman API tests, saving time and resources. 
-5. Simpler debugging: The Postman console makes it easier to debug API tests by helping teams check the retrieved data. 
-6. Collections: Postman's Collections features enables teams to group together multiple related APIs, which helps with organizing test suites.
 
-## Requirements
+## Prerequisites
 
-1. Minimum requirements to use postman tool in windows and MacOS
-2. Search this link [postman tool](https://www.postman.com/downloads/) in any browser and download the software
+1. User should be existing customer for Schneider Electric
+2. User should be subscribed to Energy and sustainability apis and should have their client-id and client-secret
+3. Open this link [postman tool](https://www.postman.com/downloads/) in any browser and download the software
 
  
 [How to import postman collection](#How-to-import-postman-collection)
@@ -24,24 +18,31 @@ There are many benefits to using open-source Postman for API testing, including:
 
 # How to import postman collection 
 1. Select Import in the left navigation menu.
-2. Select the file. Postman will automatically recognize Postman data, confirming the name, format.
-![Import](/code_samples/Media/Import.PNG)
-3. Click on upload files and select the postman collection and environment variable file.
-4. Click on import button to complete import.
+
+![image](https://user-images.githubusercontent.com/117276316/200790237-5d54aa4c-637f-4bf1-a362-638039e78ab5.png)
+
+2. click on Upload files option and select the postman collection and environment variable file. Postman will automatically recognize Postman data, confirming the name, format.
+
+![image](https://user-images.githubusercontent.com/117276316/200791281-ce9a3ccd-39f6-4352-b4cf-3653b9b6aa1c.png)
+
+3. Click on import button to complete import.
+4. 
 
 # Steps to configure the variables in environment
 
-1. Click on Environment quick look button and select the envirnoment file that is import.
-2. Configure the envirnoment variables
+1. Click on Environment quick look button and select the EnergyandSustainabilityScoring.postman_environment that is import.
+![image](https://user-images.githubusercontent.com/117276316/200793725-fe1de64d-b092-4ae5-ab7c-6b1eea7d6521.png)
+
+3. Configure the variables given below in environment section
 
 | VARIABLES  | VALUES  |
 |---|---|
-| {{api-server-host}}  | Enter the APIGEE endpoint  |
-| {{callback-url}}  |Enter the URL that invoked after OAuth authorization for the consumer (The client application callback URL to redirect to after auth. This must be registered with the API provider. If not provided, Postman will use a default empty URL and try to extract the code or access token from it)   |
+| {{api-server-host}}  | Enter the apiserver endpoint that is mentioned in the api specification file  |
+| {{callback-url}}  |Enter the URL that invoked after OAuth authorization for the consumer (The client application callback URL to redirect to after auth.  If not provided, Postman will use a default empty URL and try to extract the code or access token from it)   |
 | {{authorize-url}}  | Enter the AUthorization URL that  the endpoint for the API provider authorization server, to retrieve the auth code  |
 |  {{token-url}} | Enter token URL that provider's authentication server, to exchange an authorization code for an access token.  |
-| {{clientid}}  |  Enter authorized client Id |
-| {{clientsecret}}  | Enter authorized client secret  |
+| {{client-id}}  |  Enter authorized client Id |
+| {{client-secret}}  | Enter authorized client secret  |
 |  {{scope}} | Enter the scope of access you are requesting (refer the swagger), which may include multiple space-separated values   |
 | {{state}}  |   Enter an opaque value to prevent cross-site request forgery  |
  
