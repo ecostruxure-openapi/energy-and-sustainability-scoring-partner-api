@@ -22,9 +22,9 @@ steps to use the collections are mentioned below
 * [Steps to create registration and certification scoring for sites](#Steps-to-create-registration-and-certification-scoring-for-sites)
 
 
-## How to use given Energy and Sustainability Scoring APIs
+# How to use given Energy and Sustainability Scoring APIs
 
-# How to import postman collection 
+## How to import postman collection 
 1. Select Import in the left navigation menu.
 
 ![image](https://user-images.githubusercontent.com/117276316/200790237-5d54aa4c-637f-4bf1-a362-638039e78ab5.png)
