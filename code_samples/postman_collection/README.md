@@ -46,7 +46,7 @@ Postman is an API client that makes it easy for developers and testers to create
 | 7 |  {{scope}} | Enter the scope of access you are requesting (mentioned in the api specification file), which may include multiple space-separated values   |
 | 8 | {{state}}  |   Enter an opaque value to prevent cross-site request forgery  |
  
-
+![apiSpecUrl](/code_samples/Media/apiSpecUrl.PNG)
 
 4. After entering all the values in the environment variables, save it by clicking on 'Save' button
 
