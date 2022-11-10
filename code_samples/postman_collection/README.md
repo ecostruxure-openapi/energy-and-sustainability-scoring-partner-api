@@ -165,7 +165,7 @@ There is a Create Energy Certification Providers Api that allows the Certificati
 1. Select Create Energy Certification Providers request in the collection, generate access token using similar steps used in GetSites 
 2. Enter the input values in the request body as shown below and **send** the request  
 
-![createEnergyProvider](createEnergyProvider.png)
+![createEnergyProvider](/code_samples/Media/createEnergyProvider.png)
 
 3. New record should be created with providing the Certification metadata details and same should be obtained in the response body.
 
@@ -186,7 +186,7 @@ similarly there is create Energy certification scoring api to provide Certificat
  4. Select Create Energy Certification Providers request in the collection, generate access token using similar steps used in GetSites 
  5. Enter the input values with required type and category in the request and **send** the request
 
-![createEnergyScoring](createEnergyScoring.png)
+![createEnergyScoring](/code_samples/Media/createEnergyScoring.PNG)
 
 6. New record should be created with provide certification scores for a given site and read current and historical scores and same should be obtained in the response body.
 
@@ -220,7 +220,7 @@ similarly there is create Energy certification scoring api to provide Certificat
 This api is to retrieve all timeseries for any given site and for an arbitrary time period.
 
 1. User can retrive all timeseries by providing time duration in the query parameters in the request as shown below
-![getTimeseries](getTimeseries.png)
+![getTimeseries](/code_samples/Media/getTimeseries.PNG)
 2. User will get the timeseries details based on siteId and given interval of period in the request
 
 ### Response
