@@ -41,14 +41,14 @@ Postman is an API client that makes it easy for developers and testers to create
 | 2 | {{callback-url}}  |Enter the URL that invoked after OAuth authorization for the consumer (The client application callback URL to redirect to after auth.  If not provided, Postman will use a default empty URL and try to extract the code or access token from it)   |
 | 3 | {{authorize-url}}  | Enter the Authorization URL that  the endpoint for the API provider authorization server, to retrieve the auth code (mentioned in the api specification file) |
 | 4 |  {{token-url}} | Enter token URL that provider's authentication server, to exchange an authorization code for an access token (mentioned in the api specification file) |
-| 5 | {{client-id}}  |  Enter consumer key once they subscribe to the product |
-| 6 | {{client-secret}}  | Enter consumer key once they subscribe to the product  |
+| 5 | {{client-id}}  |  Enter consumer key obtain when they subscribe to the product |
+| 6 | {{client-secret}}  | Enter consumer key obtained when they subscribe to the product  |
 | 7 |  {{scope}} | Enter the scope of access you are requesting (mentioned in the api specification file), which may include multiple space-separated values   |
 | 8 | {{state}}  |   Enter an opaque value to prevent cross-site request forgery  |
  
 
 
-3. After entering all the values in the environment variables save it by clicking on 'Save' button
+4. After entering all the values in the environment variables, save it by clicking on 'Save' button
 
 
 ##  Steps to use the postman collection
@@ -63,16 +63,13 @@ Postman is an API client that makes it easy for developers and testers to create
 5. Check the terms and conditions and click on Authorize access button to approve the consent
 6. Click on authorization button to get access.
 7. Access token will be generated and sent back to postman
-8. Use the token to trigger the API
+8. Use the token to trigger GetSite API
 9. Click on send button to trigger API and get response.
+![Getsite](/code_samples/Media/Getsite.PNG)
 
+10. similarly user can retrive meters details by sending Getmeters request to retrieve all meters installed at a given site, including the list of measurements and units they support.
 
-## Below we have sample request and response of energy and sustainability scoring apis for the reference 
-
-# REST API
-
-The REST API to the example app is described below.
-
+### Sample response
 ## Get list of sites
 
 ### Request
