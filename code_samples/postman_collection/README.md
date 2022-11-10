@@ -16,10 +16,10 @@ steps to use the collections are mentioned below
 3. Open this link [postman tool](https://www.postman.com/downloads/) in any browser and download the software
 
  
-[How to import postman collection](#How-to-import-postman-collection)
-[Steps to configure the variables in environment](#Steps-to-configure-the-variables-in-environment)
-[Steps to use the postman collection](#Steps-to-use-the-postman-collection)
-[Steps to create registration and certification scoring for sites](Steps-to-create-registration-and-certification-scoring-for-sites)
+* [How to import postman collection](How-to-import-postman-collection)
+* [Steps to configure the variables in environment](Steps-to-configure-the-variables-in-environment)
+* [Steps to use the postman collection](Steps-to-use-the-postman-collection)
+* [Steps to create registration and certification scoring for sites](Steps-to-create-registration-and-certification-scoring-for-sites)
 
 
 ## How to use given Energy and Sustainability Scoring APIs
