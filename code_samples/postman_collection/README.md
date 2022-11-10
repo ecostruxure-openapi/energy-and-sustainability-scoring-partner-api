@@ -53,7 +53,7 @@ Postman is an API client that makes it easy for developers and testers to create
 
 ##  Steps to use the postman collection
 
-1. Goto postman collection and select GetSite request that is used to 
+1. Goto postman collection and select GetSite request that is used to retrieve all sites belonging to which the connected user has access, along site metadata needed for certification scores calculation.
 2. Generate access token but click on 'Get New Access Token' in authorization tab 
 ![GenerateAccessToken](/code_samples/Media/GenerateAccessToken.PNG)
 3. User will be navigated to CIAM login page as shown below, enter the user name and password and login.
