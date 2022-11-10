@@ -26,7 +26,7 @@ Postman is an API client that makes it easy for developers and testers to create
 ![image](https://user-images.githubusercontent.com/117276316/200791281-ce9a3ccd-39f6-4352-b4cf-3653b9b6aa1c.png)
 
 3. Click on import button to complete import.
-4. 
+
 
 # Steps to configure the variables in environment
 
@@ -49,18 +49,22 @@ Postman is an API client that makes it easy for developers and testers to create
 
 
 3. After entering all the values in the environment variables save it by clicking on 'Save' button
-4. Goto postman collection and select any Api that has to test
-5. Generate access token but click on 'Get New Access Token' in authorization tab 
+
+
+##  Steps to use the postman collection
+
+1. Goto postman collection and select GetSite request that is used to 
+2. Generate access token but click on 'Get New Access Token' in authorization tab 
 ![GenerateAccessToken](/code_samples/Media/GenerateAccessToken.PNG)
-6. User will be navigated to CIAM login page as shown below, enter the user name and password and login.
-![CIAMLoginPage](/code_samples/Media/CIAMLoginPage.PNG)
-7. User will be landing to consent page that consists of terms and conditions and scope that requires authorization to access as shown below
+3. User will be navigated to CIAM login page as shown below, enter the user name and password and login.
+![LoginPage](/code_samples/Media/LoginPage.PNG)
+4. User will be landing to consent page that consists of terms and conditions and scope that requires authorization to access as shown below
 ![consentpage](/code_samples/Media/consentpage.PNG)
-8. Check the terms and conditions and click on Authorize access button to approve the consent
-8. Click on authorization button to get access.
-9. Access token will be generated and sent back to postman
-10. Use the token to trigger the API
-11. Click on send button to trigger API and get response.
+5. Check the terms and conditions and click on Authorize access button to approve the consent
+6. Click on authorization button to get access.
+7. Access token will be generated and sent back to postman
+8. Use the token to trigger the API
+9. Click on send button to trigger API and get response.
 
 
 ## Below we have sample request and response of energy and sustainability scoring apis for the reference 
