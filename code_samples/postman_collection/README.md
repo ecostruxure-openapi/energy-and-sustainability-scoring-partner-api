@@ -46,7 +46,7 @@ Postman is an API client that makes it easy for developers and testers to create
 | 7 |  {{scope}} | Enter the scope of access you are requesting (mentioned in the api specification file), which may include multiple space-separated values   |
 | 8 | {{state}}  |   Enter an opaque value to prevent cross-site request forgery  |
  
-![apiSpecUrl](/code_samples/Media/apiSpecUrl.PNG)
+![apiSpecUrl](/code_samples/Media/apiSpecUrl.png)
 
 4. After entering all the values in the environment variables, save it by clicking on 'Save' button
 
@@ -69,16 +69,10 @@ Postman is an API client that makes it easy for developers and testers to create
 
 10. similarly user can retrive meters details by sending Getmeters request to retrieve all meters installed at a given site, including the list of measurements and units they support.
 
-### Sample response
+### Sample responses for Getsites and GetMeters
+
 ## Get list of sites
 
-### Request
-
-`GET /sites`
-```curl
-    curl --location --request GET '--HostName--/ecostruxure/v1/sites' \
---header 'Authorization: Bearer Token'
-```
 ### Response
 
     HTTP Status: 200 OK
@@ -130,14 +124,6 @@ Postman is an API client that makes it easy for developers and testers to create
 
 ## Get list of meters
 
-### Request
-
-`GET /sites/{site-id}/meters`
-``` curl
-    curl --location --request GET '{{api-server-host}}//ecostruxure/v1/sites/fc64ac6a-abfd-4f5e-9d38-81101152c0ca/meters' \
---header 'Authorization: Bearer Token' 
-```
-
 ### Response
 
     HTTP Status: 200 OK
@@ -164,15 +150,69 @@ Postman is an API client that makes it easy for developers and testers to create
 
 ```
 
+## Steps to create registration and certification scoring for sites
+
+There is a Create Energy Certification Providers Api that allows the Certification Provider, to register a site by providing the Certification metadata details and thus starting automatically a data pipeline to collect all timeseries related information. 
+
+1. Select Create Energy Certification Providers request in the collection, generate access token using similar steps used in GetSites 
+2. Enter the input values in the request body as shown below and **send** the request  
+
+![createEnergyProvider](createEnergyProvider.png)
+
+3. New record should be created with providing the Certification metadata details and same should be obtained in the response body.
+
+### sample Response
+
+    HTTP Status: 201 Created
+    Content-Type: application/json
+   
+```json
+    {
+    "leedId": 2147483647,
+    "leedName": "Mcdonald's Melton South"
+    }
+```
+
+similarly there is create Energy certification scoring api to provide Certification Scores for a given site and read current and historical scores.
+
+ 4. Select Create Energy Certification Providers request in the collection, generate access token using similar steps used in GetSites 
+ 5. Enter the input values with required type and category in the request and **send** the request
+
+![createEnergyScoring](createEnergyScoring.png)
+
+6. New record should be created with provide certification scores for a given site and read current and historical scores and same should be obtained in the response body.
+
+### Response
+
+    HTTP Status: 201 Created
+    Content-Type: application/json
+   ```json
+   [
+    {
+        "date": "2022-06-26",
+        "score": 87,
+        "type": "daily",
+        "category": "energy",
+        "updatedAt": "2022-09-29T06:28:09.38430211Z"
+    },
+    {
+        "date": "2022-06-26",
+        "score": 90,
+        "type": "monthly",
+        "category": "energy",
+        "updatedAt": "2022-09-29T06:28:09.385182117Z"
+    }
+    ]
+```
+
+
+
 ## Get list of Timeseries
 
-### Request
+This api is to retrieve all timeseries for any given site and for an arbitrary time period.
 
-`GET /sites/{site-id}/timeseries`
-``` curl
-    curl --location --request GET '{{api-server-host}}//ecostruxure/v1/sites/fc64ac6a-abfd-4f5e-9d38-81101152c0ca/timeseries?updatedAt[gte]=2022-01-01T12:08:56.235-07:00&updatedAt%5Blt%5D=2022-06-06T12:08:56.235-07:00' \
---header 'Authorization: Bearer Token' 
-```
+1. 
+
 
 ### Response
 
@@ -193,30 +233,8 @@ Postman is an API client that makes it easy for developers and testers to create
 ]
 ```
 
-## Create Energy Certification Providers
 
-### Request
 
-`POST /sites/{site-id}/certification-providers`
-``` curl
-    curl --location --request POST '{{api-server-host}}/ecostruxure/v1/sites/fc64ac6a-abfd-4f5e-9d38-81101152c0ca/certification-providers' \
---header 'Authorization: Bearer Token' \
---data-raw '{
-    "leedName": "Mcdonald'\''s Melton South",
-    "leedId": 2147483647
-    }'
-```
-### Response
-
-    HTTP Status: 201 Created
-    Content-Type: application/json
-   
-```json
-    {
-    "leedId": 2147483647,
-    "leedName": "Mcdonald's Melton South"
-    }
-```
 
 ## Get list of Timeseries
 
@@ -247,51 +265,7 @@ Postman is an API client that makes it easy for developers and testers to create
 ```
 
 
-## Create Energy Certification Scoring
 
-### Request
-
-`POST /sites/{site-id}/certification-scores`
-```curl
-    curl --location --request POST '{{api-server-host}}/ecostruxure/v1/sites/fc64ac6a-abfd-4f5e-9d38-81101152c0ca/certification-scores' \
---header 'Authorization: Bearer Token' \
---data-raw '[
-    {
-        "date": "2022-06-26",
-        "score": 87,
-        "type": "daily",
-        "category": "energy"
-    },
-    {
-        "date": "2022-06-26",
-        "score": 90,
-        "type": "monthly",
-        "category": "energy"
-    }
-    ]'
-```
-### Response
-
-    HTTP Status: 201 Created
-    Content-Type: application/json
-   ```json
-   [
-    {
-        "date": "2022-06-26",
-        "score": 87,
-        "type": "daily",
-        "category": "energy",
-        "updatedAt": "2022-09-29T06:28:09.38430211Z"
-    },
-    {
-        "date": "2022-06-26",
-        "score": 90,
-        "type": "monthly",
-        "category": "energy",
-        "updatedAt": "2022-09-29T06:28:09.385182117Z"
-    }
-    ]
-```
 ## Limitations
 
 1. User should be existing customer of SE
