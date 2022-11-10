@@ -4,8 +4,12 @@
 
 Postman is an API client that makes it easy for developers and testers to create, share, test and document APIs. With this open-source solution, users can create and save simple and complex HTTP/s requests, as well as read their responses
 
+## About post collection
 
-## Prerequisites
+This collection consists of information on the operations and resources of Energy and Sustainability Scoring APIs with samples.
+steps to use the collections are mentioned below
+
+### Prerequisites
 
 1. User should be existing customer for Schneider Electric
 2. User should be subscribed to Energy and sustainability apis and should have their client-id and client-secret
@@ -13,6 +17,10 @@ Postman is an API client that makes it easy for developers and testers to create
 
  
 [How to import postman collection](#How-to-import-postman-collection)
+[Steps to configure the variables in environment](#Steps-to-configure-the-variables-in-environment)
+[Steps to use the postman collection](#Steps-to-use-the-postman-collection)
+[Steps to create registration and certification scoring for sites](Steps-to-create-registration-and-certification-scoring-for-sites)
+
 
 ## How to use given Energy and Sustainability Scoring APIs
 
@@ -211,8 +219,9 @@ similarly there is create Energy certification scoring api to provide Certificat
 
 This api is to retrieve all timeseries for any given site and for an arbitrary time period.
 
-1. 
-
+1. User can retrive all timeseries by providing time duration in the query parameters in the request as shown below
+![getTimeseries](getTimeseries.png)
+2. User will get the timeseries details based on siteId and given interval of period in the request
 
 ### Response
 
@@ -234,38 +243,3 @@ This api is to retrieve all timeseries for any given site and for an arbitrary t
 ```
 
 
-
-
-## Get list of Timeseries
-
-### Request
-
-`GET /sites/{site-id}/timeseries`
-``` curl
-    curl --location --request GET '{{api-server-host}}//ecostruxure/v1/sites/fc64ac6a-abfd-4f5e-9d38-81101152c0ca/timeseries?updatedAt[gte]=2022-01-01T12:08:56.235-07:00&updatedAt%5Blt%5D=2022-06-06T12:08:56.235-07:00' \
---header 'Authorization: Bearer Token'
-```
-### Response
-
-    HTTP Status: 200 OK
-    Content-Type: application/json
-   ```json
-   [
-    {
-        "key": "43b68619-7681-4458-bbd6-c4e38a0b202a",
-        "values": [
-            {
-                "date": "2022-01-02T00:00:00Z",
-                "updatedAt": "2022-02-01T14:49:46Z",
-                "value": 567
-            }
-        ]
-    }
-    ]
-```
-
-
-
-## Limitations
-
-1. User should be existing customer of SE
