@@ -1,25 +1,22 @@
-# JAVA source code
+# energy-sustanibility-score ODS SDK for Java
+### Prerequisites
+------------------
+To build and run these ODS, you'll need:
+- Apache Maven (>3.0)
+- JAVA 11
+- Git Bash
+### Building the ODS
+------------------
+The ODS are divided into directories by api service (GetSites, GetMeters, and so on). Within each, you'll find a pom.xml file used for building the ODS with Maven
+- First pull the project go inside the api service you need to run
+To build, open a command-line (terminal) window and change to the directory containing the GetSites you want to build/run. Then in cli type: 
+- mvn clean install
+### Once you've build succsesfully, you can execute run.sh as shown:
+- run the below command in git bash inside the Gitesites Folder where you can see run.sh file
+#### sh run.sh $className $token $baseUrl
+Ex: sh run.sh GetSites m2n09rSoCuRXYDNYc9Au14LbkAzC https://se-exchange-uat-sandbox.apigee.net/ecostruxure
+- args 1 -> GetSites explains we need to run Getsites api
+- args 2 -> token has to be passed
+- args 3 -> baseurl has to be passed
 
-## Requirements
-
-Java
-
-## Supported Versions
-
-Java Supported Versions
-
-## Download Artefacts
-
-https://github.com/ecostruxure-openapi/Energy-and-Sustainability-Scoring/releases/tag/v1.0.0
-
-## How to use
-
-Code and Folder structrure details
-
-### Add Maven Dependency
-
-Add Maven in pom.xml
-
-### Add Gradle Dependency
-
-Add Gradle dependency in code
+This will run the GetSites api (assuming that you've built the GetSites first!).
