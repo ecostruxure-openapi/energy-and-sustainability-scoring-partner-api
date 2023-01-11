@@ -80,7 +80,7 @@ License, Apache 2.0. Categories, JSON Libraries. Tags, formatbindingjsonjackson.
 ### Compile it yourself, here's how:
  build your own .jar, execute the following from within the cloned directory:
 
-    $ git clone https://github.schneider-electric.com/open-esx/energy-sustainibilty-scoring-api.git
+    $ git clone https://github.com/ecostruxure-openapi/energy-and-sustainability-scoring.git
     $ cd energy-and-sustainability-scoring/code_samples/java
     $ mvn clean install       # Requires maven and run the below command    
  
