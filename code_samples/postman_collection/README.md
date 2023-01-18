@@ -54,7 +54,7 @@ steps to use the collections are mentioned below
 | 7 |  {{scope}} | Enter the scope of access you are requesting (mentioned in the api specification file), which may include multiple space-separated values   |
 | 8 | {{state}}  |   Enter an opaque value to prevent cross-site request forgery  |
  
-![apiSpecUrl](/code_samples/Media/apiSpecUrl.png)
+![apiSpecUrl](/code_samples/media/apiSpecUrl.png)
 
 4. After entering all the values in the environment variables, save it by clicking on 'Save' button
 
@@ -63,17 +63,17 @@ steps to use the collections are mentioned below
 
 1. Goto postman collection and select GetSite request that is used to retrieve all sites belonging to which the connected user has access, along site metadata needed for certification scores calculation.
 2. Generate access token but click on 'Get New Access Token' in authorization tab 
-![GenerateAccessToken](/code_samples/Media/GenerateAccessToken.PNG)
+![GenerateAccessToken](/code_samples/media/generateAccessToken.PNG)
 3. User will be navigated to CIAM login page as shown below, enter the user name and password and login.
-![LoginPage](/code_samples/Media/LoginPage.PNG)
+![LoginPage](/code_samples/media/loginPage.PNG)
 4. User will be landing to consent page that consists of terms and conditions and scope that requires authorization to access as shown below
-![consentpage](/code_samples/Media/consentpage.PNG)
+![consentpage](/code_samples/media/consentpage.PNG)
 5. Check the terms and conditions and click on Authorize access button to approve the consent
 6. Click on authorization button to get access.
 7. Access token will be generated and sent back to postman
 8. Use the token to trigger GetSite API
 9. Click on send button to trigger API and get response.
-![Getsite](/code_samples/Media/Getsite.PNG)
+![Getsite](/code_samples/media/getsite.PNG)
 
 10. similarly user can retrive meters details by sending Getmeters request to retrieve all meters installed at a given site, including the list of measurements and units they support.
 
@@ -165,7 +165,7 @@ There is a Create Energy Certification Providers Api that allows the Certificati
 1. Select Create Energy Certification Providers request in the collection, generate access token using similar steps used in GetSites 
 2. Enter the input values in the request body as shown below and **send** the request  
 
-![createEnergyProvider](/code_samples/Media/createEnergyProvider.png)
+![createEnergyProvider](/code_samples/media/createEnergyProvider.png)
 
 3. New record should be created with providing the Certification metadata details and same should be obtained in the response body.
 
@@ -186,7 +186,7 @@ similarly there is create Energy certification scoring api to provide Certificat
  4. Select Create Energy Certification Providers request in the collection, generate access token using similar steps used in GetSites 
  5. Enter the input values with required type and category in the request and **send** the request
 
-![createEnergyScoring](/code_samples/Media/createEnergyScoring.PNG)
+![createEnergyScoring](/code_samples/media/createEnergyScoring.PNG)
 
 6. New record should be created with provide certification scores for a given site and read current and historical scores and same should be obtained in the response body.
 
@@ -220,7 +220,7 @@ similarly there is create Energy certification scoring api to provide Certificat
 This api is to retrieve all timeseries for any given site and for an arbitrary time period.
 
 1. User can retrive all timeseries by providing time duration in the query parameters in the request as shown below
-![getTimeseries](/code_samples/Media/getTimeseries.PNG)
+![getTimeseries](/code_samples/media/getTimeseries.PNG)
 2. User will get the timeseries details based on siteId and given interval of period in the request
 
 ### Response
