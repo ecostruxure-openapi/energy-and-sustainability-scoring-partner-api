@@ -7,13 +7,14 @@ Postman is an API client that makes it easy for developers and testers to create
 ## About post collection
 
 This collection consists of information on the operations and resources of Energy and Sustainability Scoring APIs with samples.
-steps to use the collections are mentioned below
+
+Steps to use the collections are mentioned below
 
 ### Prerequisites
 
-1. User should be existing customer for Schneider Electric
-2. User should be subscribed to Energy and sustainability apis and should have their client-id and client-secret
-3. Open this link [postman tool](https://www.postman.com/downloads/) in any browser and download the software
+1. User should be existing customer of SE who has identity to cIAM system
+2. User should be subscribed to EcoStruxure™ Energy & Sustainability Scoring APIs and should have their consumer key and secret
+3. Postman tool should be installed [postman tool link](https://www.postman.com/downloads/)
 
  
 * [How to import postman collection](#How-to-import-postman-collection)
@@ -22,7 +23,7 @@ steps to use the collections are mentioned below
 * [Steps to create registration and certification scoring for sites](#Steps-to-create-registration-and-certification-scoring-for-sites)
 
 
-# How to use given Energy and Sustainability Scoring APIs
+# How to use given EcoStruxure™ Energy & Sustainability Scoring API 
 
 ## How to import postman collection 
 1. Select Import in the left navigation menu.
