@@ -53,7 +53,7 @@ import se.ecostruxure.sdk.client.PerformanceScoreApi;
 public class PerformanceScoreApiExample {
 
     public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        ApiClient defaultClient = new ApiClient();
         defaultClient.setBasePath("https://se-exchange-uat-uat.apigee.net/ecostruxure/user/scoring/v1");
         
         // Configure OAuth2 access token for authorization: OAuth2AuthCode
