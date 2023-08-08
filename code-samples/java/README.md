@@ -32,56 +32,56 @@ To build and run these SDK, you'll need:
 Add the following dependency in your project to grab via Maven:
 
 ```xml
-
-       <!-- The Apache Commons IO library contains utility classes, stream implementations, file filters, file comparators, 
-endian transformation classes, and much more-->  
-       <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.11.0</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.nimbusds/oauth2-oidc-sdk -->
-        <!-- OpenID Connection extensions for developing client and server applications. -->
-        <dependency>
-            <groupId>com.nimbusds</groupId>
-            <artifactId>oauth2-oidc-sdk</artifactId>
-            <version>9.35</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
-        <!-- HTTPClient provides an efficient, up-to-date, and feature-rich package implementing the client 
-side of the most recent HTTP standards and recommendations. -->
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.13</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
-        <!-- Apache HttpCore. Apache HttpComponents Core (blocking I/O). License, Apache Categories,
- HTTP Clients. Tags, networkapacheclienthttp. -->
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpcore</artifactId>
-            <version>4.4.15</version>
-        </dependency>
-
-       <!-- General data-binding functionality for Jackson: works on core streaming API. 
-License, Apache 2.0. Categories, JSON Libraries. Tags, formatbindingjsonjackson.-->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.13.3</version>
-        </dependency>
+    <dependency>
+        <groupId>se.ecostruxure.sdk</groupId>
+        <artifactId>energy-sustainabilty-scoring-api</artifactId>
+        <version>1.0.0</version>
+        <scope>compile</scope>
+    </dependency>
 ```
+### Getting Started
 
+Please follow the [installation](#installation) instruction and execute the following Java code:
+
+```java
+
+import se.ecostruxure.sdk.client.invoker.*;
+import se.ecostruxure.sdk.client.invoker.auth.*;
+import se.ecostruxure.sdk.client.model.*;
+import se.ecostruxure.sdk.client.PerformanceScoreApi;
+
+public class PerformanceScoreApiExample {
+
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://se-exchange-uat-uat.apigee.net/ecostruxure/user/scoring/v1");
+        
+        // Configure OAuth2 access token for authorization: OAuth2AuthCode
+        OAuth OAuth2AuthCode = (OAuth) defaultClient.getAuthentication("OAuth2AuthCode");
+        OAuth2AuthCode.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure HTTP bearer authorization: PersonalAccessToken
+        HttpBearerAuth PersonalAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("PersonalAccessToken");
+        PersonalAccessToken.setBearerToken("BEARER TOKEN");
+
+        PerformanceScoreApi apiInstance = new PerformanceScoreApi(defaultClient);
+        String siteId = "a483d4-e5be-4521-9f92-5400f5"; // String | 
+        try {
+            ScoringRequest result = apiInstance.createScoringRequest(siteId);
+            System.out.println(result);
+        } catch (Exception e) {
+            System.err.println("Exception when calling PerformanceScoreApi#createScoringRequest");      
+            e.printStackTrace();
+        }
+    }
+}
+
+```
 ### Compile it yourself, here's how:
  build your own .jar, execute the following from within the cloned directory:
 
     $ git clone https://github.com/ecostruxure-openapi/energy-and-sustainability-scoring.git
-    $ cd energy-and-sustainability-scoring/code_samples/java
+    $ cd energy-and-sustainability-scoring/code-samples/java
     $ mvn clean install       # Requires maven and run the below command    
  
 ## Run SDK Examples

@@ -1,24 +1,17 @@
 package se.ecostruxure.sdk.example;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.stream.Collectors;
-import org.apache.http.client.utils.URIBuilder;
+
+import se.ecostruxure.sdk.client.PerformanceScoreApi;
+import se.ecostruxure.sdk.client.invoker.ApiClient;
+import se.ecostruxure.sdk.client.model.PerformanceScore;
 
 public class GetPerformanceScores {
 
-    public static void main(String[] args) throws IOException, InterruptedException, URISyntaxException {
-
+    public static void main(String[] args) {
         String token = null;
         String baseUrl = null;
         String siteId = null;
@@ -47,8 +40,7 @@ public class GetPerformanceScores {
             default: break;
             }
         }
-
-        //To check the null conditions
+      //To check the null conditions
         if (Boolean.TRUE.equals(checkNull(token))) {
             statusMessage(TOKEN_NAME);
             return;
@@ -69,48 +61,19 @@ public class GetPerformanceScores {
             statusMessage(CATEGORY);
             return;
         }
-
-        //To get Token
-        String accessToken = getSitesToken(token);
-
-        //To generate Url
-        String concatenatedUrl = baseUrl.concat(GET_CERTIFICATION_SCORES.replace("{siteId}", siteId));
-
-        // To add the required query params
-        URIBuilder uri = new URIBuilder(concatenatedUrl);
-        typeList.stream().map(type -> uri.addParameter(TYPE, type)).collect(Collectors.toList());
-        categoryList.stream().map(category -> uri.addParameter(CATEGORY, category)).collect(Collectors.toList());
-
-        //To call the API
-        HttpResponse<String> getCertificationScoreResponse = getCertificateScoreResponse(uri.toString(), accessToken);
-
-        // Response
-        logger.log(Level.INFO,getCertificationScoreResponse.body());
-    }
-
-    /**
-     * Process and produce response.
-     * @param baseUrl
-     * @param accessToken
-     * @return HttpResponse<String>
-     * @throws IOException
-     * @throws InterruptedException
-     */
-    public static HttpResponse<String> getCertificateScoreResponse(String baseUrl, String accessToken)
-            throws IOException, InterruptedException {
-        URI uri = URI.create(baseUrl);
-        HttpRequest request = HttpRequest.newBuilder().uri(uri).GET().headers(AUTHORIZATION, accessToken).build();
-        HttpResponse<String> response = null;
+        ApiClient defaultClient = new ApiClient();
+        defaultClient.setBasePath(baseUrl);
+        defaultClient.setBearerToken(token);
+        PerformanceScoreApi apiInstance = new PerformanceScoreApi(defaultClient);
         try {
-            response = HttpClient.newBuilder().build().send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException e) {
-            throw new IOException(URL_NOT_FOUND);
-        } catch (InterruptedException e) {
-            throw new InterruptedException(INTERRUPTED);
-        }
-        return response;
-    }
+            System.out.println(apiInstance.listPerformanceScores(siteId, typeList, categoryList));
+            List<PerformanceScore> result = apiInstance.listPerformanceScores(siteId, typeList, categoryList);
+            System.out.println(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } 
 
+    }
     /**
      * check the value null.
      * @param arguments
@@ -135,19 +98,6 @@ public class GetPerformanceScores {
         }
         return values;
     }
-
-    /**
-     * To frame access token.
-     * @param token
-     * @param baseUrl
-     * @return HttpResponse
-     * @throws IOException
-     * @throws InterruptedException
-     */
-    public static String getSitesToken(String token) {
-        return BEARER.concat(token);
-    }
-
     /**
      * statusMessage.
      * @param argument
@@ -155,7 +105,7 @@ public class GetPerformanceScores {
     private static void statusMessage(String argument) {
         String errorMessage = null;
         errorMessage = argument.concat(" cannot be empty");
-        logger.log(Level.INFO, getDetailsErrorMessage(errorMessage).toString());
+        System.out.println(getDetailsErrorMessage(errorMessage).toString());
     }
 
     /**
@@ -177,14 +127,9 @@ public class GetPerformanceScores {
     private static final String TYPE = "type";
     private static final String SITEID_NAME = "siteId";
     private static final String CATEGORY = "category";
-    private static final String GET_CERTIFICATION_SCORES = "/v1/sites/{siteId}/certification-scores";
-    private static final String BEARER = "Bearer ";
-    private static final String AUTHORIZATION = "Authorization";
     private static final String BAD_REQUEST = "Bad Request";
     private static final String URL_NOT_FOUND = "Provided URL not Found.";
     private static final String INTERRUPTED = "Interrupted please check your request.";
     private static final Integer STATUS = 400;
     private static final String URL_PATH = "/certification-scores";
-    private static final Logger logger = Logger.getLogger("GetCertificationScores");
-
 }
