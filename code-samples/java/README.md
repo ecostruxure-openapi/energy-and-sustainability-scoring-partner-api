@@ -54,7 +54,7 @@ public class PerformanceScoreApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = new ApiClient();
-        defaultClient.setBasePath("https://se-exchange-uat-uat.apigee.net/ecostruxure/user/scoring/v1");
+        defaultClient.setBasePath("https://api.exchange.se.com/ecostruxure");
         
         // Configure OAuth2 access token for authorization: OAuth2AuthCode
         OAuth OAuth2AuthCode = (OAuth) defaultClient.getAuthentication("OAuth2AuthCode");
@@ -62,7 +62,7 @@ public class PerformanceScoreApiExample {
 
         // Configure HTTP bearer authorization: PersonalAccessToken
         HttpBearerAuth PersonalAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("PersonalAccessToken");
-        PersonalAccessToken.setBearerToken("BEARER TOKEN");
+        PersonalAccessToken.setBearerToken("TOKEN");
 
         PerformanceScoreApi apiInstance = new PerformanceScoreApi(defaultClient);
         String siteId = "a483d4-e5be-4521-9f92-5400f5"; // String | 
@@ -126,14 +126,14 @@ The objective is to return the scores (average, daily, monthly, yearly) and base
  ```
  > **Example**
  ```
- ./run.sh -c "GetPerformanceScores" -t "cX5BTXzjPPimyMy121pdKDgGWKWlS" -b "https://se-exchange-uat-uat.apigee.net/ecostruxure" -s "e80101c0dd-9103-44d7-af93-2d06946c8cdf" -p "daily" -y "energy"
+ ./run.sh -c "GetPerformanceScores" -t "cX5BTXzjPPimyMy121pdKDgGWKWlS" -b "https://api.exchange.se.com/ecostruxure" -s "e80101c0dd-9103-44d7-af93-2d06946c8cdf" -p "daily" -y "energy"
  ```
  > **Note**
  you can pass multiple type and category
  
   > **Example**
   ```
-   ./run.sh -c "GetPerformanceScores" -t "cX5BTXzjPPimyMy121pdKDgGWKWlS" -b "https://se-exchange-uat-uat.apigee.net/ecostruxure" -s "e80101c0dd-9103-44d7-af93-2d06946c8cdf" -p "daily" -y "energy" -p "monthly" -y "consumption"
+   ./run.sh -c "GetPerformanceScores" -t "cX5BTXzjPPimyMy121pdKDgGWKWlS" -b "https://api.exchange.se.com/ecostruxure" -s "e80101c0dd-9103-44d7-af93-2d06946c8cdf" -p "daily" -y "energy" -p "monthly" -y "consumption"
   ```
  ## Run as maven command with arguments that has to be passed
  - $baseUrl to pass baseUrl value
@@ -148,13 +148,13 @@ mvn exec:java -Dexec.mainClass="se.ecostruxure.sdk.example.$className" -Dexec.ar
  ```
  > **Example**
  ```
- mvn exec:java -Dexec.mainClass="se.ecostruxure.sdk.example.GetPerformanceScores" -Dexec.args="token=nFxghx baseUrl=https://api.exchange.se.com/ecostruxure siteId=eb7a2757-d4d8-44e7-8d  type="monthly" category=energy" -Dexec.cleanupDaemonThreads=false
+ mvn exec:java -Dexec.mainClass="se.ecostruxure.sdk.example.GetPerformanceScores" -Dexec.args="token=nFxghx baseUrl=https://api.exchange.se.com/ecostruxure siteId=eb7a2757-d4d8-44e7-8d  type=monthly category=energy" -Dexec.cleanupDaemonThreads=false
  ```
  > **Note**
  You can also pass multiple type and category
  - Example
  ```
-mvn exec:java -Dexec.mainClass="se.ecostruxure.sdk.example.GetPerformanceScores" -Dexec.args="token=nFxghx baseUrl=https://api.exchange.se.com/ecostruxure  siteId=eb7a2757-d4d8-44e7-8d type="daily" category=energy"  type="monthly" category=consumption" -Dexec.cleanupDaemonThreads=false
+mvn exec:java -Dexec.mainClass="se.ecostruxure.sdk.example.GetPerformanceScores" -Dexec.args="token=nFxghx baseUrl=https://api.exchange.se.com/ecostruxure  siteId=eb7a2757-d4d8-44e7-8d type=daily category=energy  type=monthly category=consumption" -Dexec.cleanupDaemonThreads=false
  ```
 ### CreateScoringRequests
 Allows end user to request a site to be configured for generating LEED certificate.
